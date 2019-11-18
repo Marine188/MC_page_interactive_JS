@@ -1,3 +1,5 @@
+//L'instruction let permet de déclarer une variable dont la portée est celle du bloc courant, éventuellement en initialisant sa valeur.
+
 // Fonctionnalité 1
 // let element = document.getElementsByTagName('footer')[0]; //lance la recherche sur un élément spécifique dans l'arbre DOM.
 //
@@ -9,7 +11,6 @@
 
 // Fonctionnalité 1-bis :
 let element = document.getElementsByTagName('footer')[0]; //lance la recherche sur un élément spécifique dans l'arbre DOM.
-
 let count = 1;
 
 if (element.addEventListener("click",function() { //mise en place du compteur
@@ -21,7 +22,6 @@ if (element.addEventListener("click",function() { //mise en place du compteur
 
 // Fonctionnalité 2 :
 let btn = document.getElementsByClassName("navbar-toggler")[0]; //Sélection du bouton avex l'index
-
 let navHead = document.getElementById("navbarHeader");
 
 btn.addEventListener('click',function() {
@@ -38,13 +38,27 @@ firstEditBtn.addEventListener('click',function(){
 });
 
 // Fonctionnalité 4 :
-//
 let secondCard = document.getElementsByClassName('card-text')[1]; // changement de l'index pour selectionner la 2ème card
-
 let secondEditBtn = document.getElementsByClassName('btn-outline-secondary')[1];//idem que pour le bouton 1 mais on change l'index pour sélectionner le deuxième
 
-secondEditBtn.addEventListener('click',function(){ //
+secondEditBtn.addEventListener('click',function(){ //lorsque je clique sur le btn edit alors ::
 	if (secondCard.style.color === 'green')
 		secondCard.style.color = "";
 	else secondCard.style.color = "green";
 });
+
+// Fonctionnalité 5 :
+let link = document.getElementsByTagName("link")[0];
+let header = document.getElementsByTagName("header")[0];
+
+function stopBootstrap() { //On stop boostrap,
+	if (link.rel == "none") {
+		link.rel = "stylesheet";
+	}
+	else {
+		link.rel = "none";
+	}
+}
+header.addEventListener("dblclick", stopBootstrap); //quand on redouble click ca annule la commande stopboostrap
+
+// Foncionnalité 6 :
