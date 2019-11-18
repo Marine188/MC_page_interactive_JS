@@ -30,11 +30,21 @@ btn.addEventListener('click',function() {
 
 
 // Fonctionnalité 3 :
-let firstCard = document.getElementsByClassName("card")[0]; //Sélection de la première carte
-let firstEditBtn = document.getElementsByClassName("btn")[3]; //sélection du premier bouton
+let firstCard = document.getElementsByClassName('card-text')[0]; //Sélection de la première carte avec l'index
+let firstEditBtn = document.getElementsByClassName('btn')[3]; //sélection du premier bouton avec l'index
 
-firstEditBtn.addEventListener("click",function(){
-	firstCard.style = "color:red"; //Passe le texte en rouge
+firstEditBtn.addEventListener('click',function(){
+	firstCard.style = 'color:red'; //Passe le texte en rouge
 });
 
 // Fonctionnalité 4 :
+//
+let secondCard = document.getElementsByClassName('card-text')[1]; // changement de l'index pour selectionner la 2ème card
+
+let secondEditBtn = document.getElementsByClassName('btn-outline-secondary')[1];//idem que pour le bouton 1 mais on change l'index pour sélectionner le deuxième
+
+secondEditBtn.addEventListener('click',function(){ //
+	if (secondCard.style.color === 'green')
+		secondCard.style.color = "";
+	else secondCard.style.color = "green";
+});
